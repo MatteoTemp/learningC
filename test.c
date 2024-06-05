@@ -1,7 +1,5 @@
 
-#include "matrix.h"
-#include "rotation.h"
-
+#include "LinearAlgebra.h"
 #include <math.h>
 
 int main(){
