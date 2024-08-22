@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE_MISMATCH -1
+#define SHAPE_MISMATCH -2
+
 typedef struct matrix{
 
     /*

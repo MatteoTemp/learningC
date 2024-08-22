@@ -17,7 +17,11 @@ double normp(Matrix * m, int p){
     return pow(result, 1 / (double)p);
 }
 
+
+
 double determinant(Matrix * m){
+
+    //must be implemented
 
     if (m->row_n != m->col_n){
         perror("La matrice non è singolare\n");
@@ -25,7 +29,6 @@ double determinant(Matrix * m){
     }
 
     return 0;
-
 }
 
 #endif
