@@ -10,7 +10,7 @@ Matrix * convolution(Matrix * input, Matrix * kernel){
 
     if (input->row_n != 1 || kernel -> row_n != 1){
         fprintf(stderr, "Input matrices must be row-vectors");
-        exit(SHAPE_MISMATCH);
+        exit(SHAPE_MISMATCH); //definition can be found in matrix.h
     }
 
     int input_size = input->col_n;
