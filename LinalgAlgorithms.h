@@ -17,6 +17,28 @@ double normp(Matrix * m, int p){
     return pow(result, 1 / (double)p);
 }
 
+Matrix * linspace(double lower_bound, double upper_bound, int steps){
+    Matrix * output = init(1, steps);
+    double delta_x = (upper_bound - lower_bound) / (double)(steps - 1);
+
+    for (int i = 0; i <= steps; i++){
+        output->elements[0][i] = lower_bound + (double)i * delta_x;
+    }
+
+    return output;
+}
+
+Matrix * map(double (*f)(double, double*), Matrix * m, double * parameters){
+    Matrix * output = init(m->row_n, m->col_n);
+
+    for(int i = 0; i < m->row_n; i++){
+        for (int j = 0; j < m->col_n; j++){
+            output->elements[i][j] = f(m->elements[i][j], parameters);
+        }
+    }
+
+    return output;
+}
 
 
 double determinant(Matrix * m){

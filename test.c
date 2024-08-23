@@ -1,29 +1,23 @@
 
 #include "matrix.h"
 #include "convolution.h"
+#include "LinalgAlgorithms.h"
 #include <math.h>
 #include <stdlib.h>
 
-
+double f(double x, double * params){
+    return x*x*params[0] + params[1];
+}
 
 int main(int argc, char ** argv){
 
-    int size = atoi(argv[1]);
+    int size = 5;
+    double params[] = {1.0, 2.0};
 
-    Matrix * m = init(1, size);
-    Matrix * n = init(1, size);
-
-
-    for (int i = 0; i < size; i++){
-        m->elements[0][i] = 1.0;
-        n->elements[0][i] = 1.0;
-    }
-
-    show(m);
-    show(n);
-
-    Matrix * result = convolution(m, n);
-    show(transpose(result).m);
+    Matrix * x = linspace(-1.0, 1.0, 10);
+    Matrix * y = map(f, x, params);
+    show(transpose(x).m);
+    show(transpose(y).m);
 
     return 0;
 }
